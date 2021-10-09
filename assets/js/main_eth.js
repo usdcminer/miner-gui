@@ -132,14 +132,16 @@ function refreshData(){
     updateSellPrice()
 }
 function updateEggNumber(eggs){
-    var hatchminersquantitydoc=document.getElementById('hatchminersquantity')
-    hatchminersquantitydoc.textContent=translateQuantity(eggs,0)
-    var allnumeggs=document.getElementsByClassName('num-miners')
-    for(var i=0;i<allnumeggs.length;i++){
-        if(allnumeggs[i]){
-            allnumeggs[i].textContent=translateQuantity(eggs,3)
-        }
+    var hatchminersquantitydoc=document.getElementById('hatchminersquantity');
+	if(hatchminersquantitydoc){
+		hatchminersquantitydoc.textContent=translateQuantity(eggs,0)
+		var allnumeggs=document.getElementsByClassName('num-miners')
+		for(var i=0;i<allnumeggs.length;i++){
+			if(allnumeggs[i]){
+				allnumeggs[i].textContent=translateQuantity(eggs,3)
+			}
     }
+	}
 }
 function hatchEggs1(){
     ref=getQueryVariable('ref')
